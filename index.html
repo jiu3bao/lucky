@@ -111,7 +111,7 @@
         .tools {
             position: absolute;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
             text-align: center;
         }
         .tools .pure-button {
@@ -148,10 +148,9 @@
 <div id="result" class="result">
 </div>
 <div id="tools" class="tools">
-    <div style="width:100%;position:fixed;display: flex;top:50px;right:20px">
+    <div style="position:fixed;display: flex;top:50px;right:20px">
         <input type="text" placeholder="参与抽奖人数" style='text-indent: 2em;' id='num'  v-model="people">
         <button @click='input_num'>确定</button>
-        </br>
         <button
             v-for="v in prices"
             @click="onClick(v,'price')"
@@ -240,18 +239,20 @@
         var app = new Vue({
             el: '#tools',
             data: {
-                selected: 30,
+                selected: 20,
                 people:0,
                 price_selected:'三等奖',
                 running: false,
                 btns: [
-                    30, 10, 5, 2, 1
+                    20, 12, 8, 5, 2, 1
                 ],
                 prices:[
-                    '三等奖',
-                    '二等奖',
-                    '一等奖',
-                    '特等奖'
+                    '苏泊尔榨汁机',
+                    '格兰仕微波炉',
+                    '米家空气净化器',
+                    '美的扫地机器人',
+                    '海尔冰箱',
+                    '小米电视'
                 ]
             },
             mounted () {
